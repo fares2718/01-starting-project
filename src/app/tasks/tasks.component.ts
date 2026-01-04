@@ -22,4 +22,11 @@ export class TasksComponent {
   get selectedUserTasks() {
     return this.tasks.filter((t) => t.userId === this.user.id);
   }
+
+  onCompleteTask(id: string) {
+    this.tasks.splice(
+      this.tasks.findIndex((t) => t.id === id),
+      1
+    );
+  }
 }
