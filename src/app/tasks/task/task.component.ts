@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import { type Task } from './task.model';
 import { CardComponent } from '../../shared/card/card.component';
 
@@ -7,7 +8,7 @@ import { CardComponent } from '../../shared/card/card.component';
   standalone: true,
   templateUrl: './task.component.html',
   styleUrl: './task.component.css',
-  imports: [CardComponent],
+  imports: [CardComponent, DatePipe],
 })
 export class TaskComponent {
   @Input({ required: true }) task!: Task;
